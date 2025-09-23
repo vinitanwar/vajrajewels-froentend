@@ -339,7 +339,7 @@ useEffect(()=>{
                     className="w-full h-full rounded-full object-cover"
                   />
                 </Link>
-                <p className="text-center mt-2">{item.title}</p>
+                <p className="text-center mt-2 capitalize">{item.title}</p>
               </div>
             ))}
           </div>
