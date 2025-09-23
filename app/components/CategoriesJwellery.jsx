@@ -75,7 +75,7 @@ fetchProducts(activeCategory)
           {categories?.map((category) => (
             <button
               key={category}
-              className={`text-lg px-3 pb-2 ${
+              className={`text-lg px-3 pb-2  capitalize ${
                 activeCategory === category.title
                   ? "font-normal border-b-1 border-black"
                   : "text-gray-600"
