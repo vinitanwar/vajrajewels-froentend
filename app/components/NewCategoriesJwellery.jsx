@@ -1,4 +1,4 @@
-"use client"
+collectionsections client"
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import axios from "axios";
@@ -325,7 +325,7 @@ useEffect(()=>{
     <div className="categories bg-[#f3f1ec]">
       <div className="px-5 md:px-12 xl:px-32  pt-8 md:pt-12 lg:pt-10  container mx-auto">
         <h6 className="text-2xl md:text-3xl xl:text-5xl text-center">
-          Vajra collections
+          Vajra Collections
         </h6>
 
         <div className=" mt-8  ">
