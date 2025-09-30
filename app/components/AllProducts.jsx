@@ -10,7 +10,7 @@ import axios from "axios";
 import { baseurl } from "./utils/apis";
 
 
-export default function AllProducts() {
+export default function AllProducts({cat=""}) {
   const [sortBy, setSortBy] = useState("newest");
   const [sortedProducts, setSortedProducts] = useState([]);
 
@@ -66,7 +66,14 @@ setAllProducts(data.products)
   },[pricefilter,genderfilter])
 
 useEffect(()=>{
+  if(cat){
+
+      fetchproduct(`cat=${cat}`)
+
+  }else{
   fetchproduct()
+
+  }
 },[])
 
 

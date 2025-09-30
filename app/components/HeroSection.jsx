@@ -42,11 +42,11 @@ useEffect(()=>{GetBanner()},[])
       >
         {swiperData?.map((elm, index) => (
           <SwiperSlide key={index} className="">
-          <div className="h-[45vh] md:h-[57vh] xl:h-[68vh] 2xl:h-screen w-full">
+          <div className="h-[45vh] md:h-[57vh] xl:h-[80vh]  w-full">
   <img 
     src={`${imgurl}/${elm.banner}`} 
     alt="banner" 
-    className="w-full h-full object-cover object-center md:object-center" 
+    className="w-full h-full object-cover" 
   />
 </div>
 

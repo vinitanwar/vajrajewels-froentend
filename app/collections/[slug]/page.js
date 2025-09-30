@@ -1,6 +1,7 @@
 import React from "react";
 import SlugInerPage from "./SlugInerPage";
 import { notFound } from "next/navigation";
+import AllProducts from "@/app/components/AllProducts";
 
 const serviceList = [
   { title: "Rings", link: "/collections/rings" },
@@ -29,7 +30,8 @@ export default function CollectionPage({ params: { slug } }) {
 
   return (
     <div>
-      <SlugInerPage slug={slug} />
+      <AllProducts    cat={slug}  />
+      {/* <SlugInerPage slug={slug} /> */}
     </div>
   );
 }
