@@ -36,8 +36,9 @@ export default function Nav() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+      dispatch(GetLayout());
     dispatch(getUser());
-    dispatch(GetLayout());
+  
   }, []);
 
   const [sideBarToogle, setSideBarToggle] = useState(false);
