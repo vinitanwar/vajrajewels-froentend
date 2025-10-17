@@ -1,4 +1,6 @@
 "use client";
+import React, { useEffect } from "react";
+
 import Link from "next/link";
 import { RiInstagramFill } from "react-icons/ri";
 import { FaFacebook ,FaLinkedin,FaTwitter,FaYoutube} from "react-icons/fa";
@@ -8,12 +10,18 @@ import { HiOutlineMail } from "react-icons/hi";
 import { useSelector } from "react-redux";
 import { imgurl } from "./utils/apis";
 import { FaThreads } from "react-icons/fa6";
+import { useDispatch } from "react-redux";
+import { GetLayout } from "../store/layoutSlice";
 
 const Footer = () => {
 const layout=useSelector(state=>state.layout)  
+  const dispatch = useDispatch();
 
 
-
+ useEffect(() => {
+      dispatch(GetLayout());
+  
+  }, []);
  
   return (
     <footer className="bg-[#000] text-white pt-10  px-5 md:px-12 xl:px-32">
