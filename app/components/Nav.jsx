@@ -44,15 +44,15 @@ export default function Nav() {
   const [sideBarToogle, setSideBarToggle] = useState(false);
 
   const SideBar = () => {
-    return (
+    return ( <>
       <motion.div
         initial="hidden"
         animate={sideBarToogle ? "visible" : "hidden"}
-        variants={sidebarVariants}
+        // variants={sidebarVariants}
         transition={{ type: "spring", stiffness: 200, damping: 20 }}
         className=" w-screen h-full fixed z-[100]  lg:hidden bg-black/50 lg:bg-[rgba(0,0,0,.7)] "
       >
-        <div className="  px-5 md:px-12  h-full   md:w-[400px]  bg-[#000]  text-white shadow-lg">
+        {/* <div className="  px-5 md:px-12  h-full   md:w-[400px]  bg-[#000]  text-white shadow-lg">
           <ul className="space-y-5 pt-24   uppercase text-sm text-center">
             {navItems.map((elm) => (
               <li key={elm.title} className="  relative  text-2xl  ">
@@ -104,7 +104,7 @@ export default function Nav() {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
       </motion.div>
       <div
         className={`${sideBarToogle ? "translate-x-0" : "-translate-x-full"} 
@@ -168,6 +168,7 @@ export default function Nav() {
           </ul>
         </div>
       </div>
+      </>
     );
   };
 
@@ -567,7 +568,7 @@ export default function Nav() {
         </div>
       </header>
 
-      {/* <SideBar /> */}
+      <SideBar />
 
       {searchtoggle && <SearchProduct setSearchToogle={setSearchToogle} />}
     </>
