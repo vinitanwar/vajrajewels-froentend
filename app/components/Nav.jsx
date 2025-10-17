@@ -45,67 +45,67 @@ export default function Nav() {
 
   const SideBar = () => {
     return (
-      // <motion.div
-      //   initial="hidden"
-      //   animate={sideBarToogle ? "visible" : "hidden"}
-      //   variants={sidebarVariants}
-      //   transition={{ type: "spring", stiffness: 200, damping: 20 }}
-      //   className=" w-screen h-full fixed z-[100]  lg:hidden bg-black/50 lg:bg-[rgba(0,0,0,.7)] "
-      // >
-      //   <div className="  px-5 md:px-12  h-full   md:w-[400px]  bg-[#000]  text-white shadow-lg">
-      //     <ul className="space-y-5 pt-24   uppercase text-sm text-center">
-      //       {navItems.map((elm) => (
-      //         <li key={elm.title} className="  relative  text-2xl  ">
-      //           <div
-      //             onClick={() =>
-      //               setphoneNavDropDownTab((prev) =>
-      //                 prev == elm.title ? "" : elm.title
-      //               )
-      //             }
-      //             className="flex items-center gap-x-4"
-      //           >
-      //             {elm.link ? (
-      //               <Link
-      //                 href={elm.link}
-      //                 onClick={() => setSideBarToggle(false)}
-      //               >
-      //                 {elm.title}
-      //               </Link>
-      //             ) : (
-      //               <span>{elm.title}</span>
-      //             )}
+      <motion.div
+        initial="hidden"
+        animate={sideBarToogle ? "visible" : "hidden"}
+        variants={sidebarVariants}
+        transition={{ type: "spring", stiffness: 200, damping: 20 }}
+        className=" w-screen h-full fixed z-[100]  lg:hidden bg-black/50 lg:bg-[rgba(0,0,0,.7)] "
+      >
+        <div className="  px-5 md:px-12  h-full   md:w-[400px]  bg-[#000]  text-white shadow-lg">
+          <ul className="space-y-5 pt-24   uppercase text-sm text-center">
+            {navItems.map((elm) => (
+              <li key={elm.title} className="  relative  text-2xl  ">
+                <div
+                  onClick={() =>
+                    setphoneNavDropDownTab((prev) =>
+                      prev == elm.title ? "" : elm.title
+                    )
+                  }
+                  className="flex items-center gap-x-4"
+                >
+                 {elm.link ? (
+                    <Link
+                      href={elm.link}
+                      onClick={() => setSideBarToggle(false)}
+                    >
+                      {elm.title}
+                    </Link>
+                  ) : (
+                    <span>{elm.title}</span>
+                  )}
 
-      //             {!navLinks.includes(elm.title) && (
-      //               <MdOutlineArrowForwardIos
-      //                 className={`${
-      //                   phoneNavDropDownTab === elm.title
-      //                     ? "rotate-90"
-      //                     : "rotate-0"
-      //                 } transition-transform duration-300 ease-in-out`}
-      //               />
-      //             )}
-      //           </div>
-      //           {phoneNavDropDownTab == elm.title && (
-      //             <div className="flex justify-center">
-      //               <ul className="  mt-3 flex flex-col items-start">
-      //                 {elm.subcategories?.map((elm, index) => (
-      //                   <li key={index} className="text-xl">
-      //                     <Link
-      //                       href={elm.link}
-      //                       onClick={() => setSideBarToggle(false)}
-      //                     >
-      //                       {elm.title}
-      //                     </Link>
-      //                   </li>
-      //                 ))}
-      //               </ul>
-      //             </div>
-      //           )}
-      //         </li>
-      //       ))}
-      //     </ul>
-      //   </div>
-      // </motion.div>
+                  {!navLinks.includes(elm.title) && (
+                    <MdOutlineArrowForwardIos
+                      className={`${
+                        phoneNavDropDownTab === elm.title
+                          ? "rotate-90"
+                          : "rotate-0"
+                      } transition-transform duration-300 ease-in-out`}
+                    />
+                  )}
+                </div>
+                {phoneNavDropDownTab == elm.title && (
+                  <div className="flex justify-center">
+                    <ul className="  mt-3 flex flex-col items-start">
+                    {elm.subcategories?.map((elm, index) => (
+                        <li key={index} className="text-xl">
+                          <Link
+                            href={elm.link}
+                            onClick={() => setSideBarToggle(false)}
+                          >
+                            {elm.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </motion.div>
       <div
         className={`${sideBarToogle ? "translate-x-0" : "-translate-x-full"} 
   w-screen h-full fixed top-0 left-0 z-[100] lg:hidden bg-black/50 lg:bg-[rgba(0,0,0,.7)] 
