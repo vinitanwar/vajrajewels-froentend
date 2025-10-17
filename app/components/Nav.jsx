@@ -566,7 +566,7 @@ export default function Nav() {
         </div>
       </header>
 
-      <SideBar />
+      {/* <SideBar /> */}
 
       {searchtoggle && <SearchProduct setSearchToogle={setSearchToogle} />}
     </>
