@@ -54,7 +54,6 @@ export default function Nav() {
 
   // Fetch user & layout data
   useEffect(() => {
-    dispatch(GetLayout());
     dispatch(getUser());
   }, [dispatch]);
 
@@ -113,6 +112,8 @@ export default function Nav() {
 
   // Fetch categories on mount
   useEffect(() => {
+        dispatch(GetLayout());
+
     fetchCat();
   }, []);
 
